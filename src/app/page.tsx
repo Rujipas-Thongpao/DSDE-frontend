@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Form from "next/form";
 import Card from "./components/Card";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ticket } from "./Types/ticket";
 import axios from "axios";
 import ReactMarkdown from "react-markdown";
@@ -90,13 +90,15 @@ export default function Home() {
     }
   };
 
+
+
   return (
-    <div className="flex justify-center bg-white text-green-900 p-6">
+    <div className="flex justify-center min-h-screen bg-white text-green-900 p-6">
       {/* Chat Box  */}
-      <div className="max-w-7xl">
-        <form onSubmit={onSubmit}>
+      <div className="max-w-7xl w-full">
+        <form onSubmit={onSubmit} className="w-full">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6">
-            <h1 className="text-xl font-bold text-green-1000">
+            <h1 className="text-2xl font-bold text-green-1000">
               Traffy Summary
             </h1>
             <input
@@ -115,25 +117,25 @@ export default function Home() {
           </div>
         </form>
         {/* Summary  */}
-        <div id="result-summarize" className="mb-6">
+        <div id="result-summarize w-full" className="mb-6">
           {loading && (
-            <div className="flex justify-center items-center my-6">
+            <div className="flex justify-center items-center my-20">
               <div className="w-8 h-8 border-4 border-green-500 border-t-transparent rounded-full animate-spin"></div>
             </div>
           )}
           {summarize && (
-            <h1 className="text font text-green-800">
+            <h1 className="text-lg font text-green-800 space-y-4">
               <ReactMarkdown>{summarize}</ReactMarkdown>
             </h1>
           )}
         </div>
 
         {/* Ticket Grid  */}
-        {loading && (
+        {/* {loading && (
           <div className="flex justify-center items-center my-6">
             <div className="w-8 h-8 border-4 border-green-500 border-t-transparent rounded-full animate-spin"></div>
           </div>
-        )}
+        )} */}
         <div
           id="result-grid"
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-6"
