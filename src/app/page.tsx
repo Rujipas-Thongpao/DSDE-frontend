@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { ticket } from "./Types/ticket";
 import axios from "axios";
 import ReactMarkdown from "react-markdown";
+import Typewriter from "./components/Typewriter";
 
 const tickets_mock = [
   {
@@ -125,7 +126,10 @@ export default function Home() {
           )}
           {summarize && (
             <h1 className="text-lg font text-green-800 space-y-4">
-              <ReactMarkdown>{summarize}</ReactMarkdown>
+              {/* <ReactMarkdown>
+                {summarize}
+              </ReactMarkdown> */}
+              <Typewriter text={summarize}/>
             </h1>
           )}
         </div>
