@@ -64,10 +64,12 @@ export default function Home() {
   const [summarize, setSummarize] = useState("");
   const [tickets, setTickets] = useState<ticket[]>([]);
   const [loading, setLoading] = useState(false);
+  const [done, setDone] = useState(false);
 
   const onSubmit = async (e: React.FormEvent) => {
     console.log(textInput);
     e.preventDefault();
+    setDone(false);
     setLoading(true);
     setSummarize("");
     setTickets([]);
@@ -129,7 +131,7 @@ export default function Home() {
               {/* <ReactMarkdown>
                 {summarize}
               </ReactMarkdown> */}
-              <Typewriter text={summarize}/>
+              <Typewriter text={summarize} onDone={() => setDone(true)}/>
             </h1>
           )}
         </div>
@@ -140,14 +142,14 @@ export default function Home() {
             <div className="w-8 h-8 border-4 border-green-500 border-t-transparent rounded-full animate-spin"></div>
           </div>
         )} */}
-        <div
+        {done && <div
           id="result-grid"
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-6"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-6 animate-fade-in"
         >
           {tickets.map((ticket) => (
             <Card key={ticket.ticket_id} {...ticket} />
           ))}
-        </div>
+        </div>}
       </div>
     </div>
   );
