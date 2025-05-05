@@ -57,7 +57,7 @@ export default function Card({
                     {ticket_id}
                 </h2>
 
-                <div className="relative w-full h-48 bg-gray-100 rounded-md overflow-hidden border">
+                <div className="relative w-full h-48 bg-gray-100 mb-3 rounded-md overflow-hidden border">
                     {!imgLoaded && !imgError && (
                         <div className="absolute inset-0 flex items-center justify-center text-gray-400 text-sm">
                             Loading image...
