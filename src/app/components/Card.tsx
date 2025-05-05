@@ -39,9 +39,10 @@ export default function Card({
 
 
     const statusColors: Record<string, string> = {
-        "Resolved": "#4caf50",  // green
-        "In Progress": "#ff9800", // orange
-        "Open": "#f44336",   // red
+        "เสร็จสิ้น": "#4CAF50", // Green
+        "กำลังดำเนินการ": "#FF9800", // Blue
+        "รอรับเรื่อง": "#2196F3", // Orange
+        "ส่งต่อ": "#FF5722", // Red
     };
     const fallbackPhoto =
         "https://storage.googleapis.com/traffy_public_bucket/attachment/2025-04/eed82b385f8a1b773414d066a0800ffe.jpg";
@@ -84,12 +85,12 @@ export default function Card({
                             <div
                                 style={{
                                     backgroundColor: "lightgray",
-                                    color: "white",
+                                    color: "black",
                                     padding: "4px 8px",
                                     margin: "2px",
                                     borderRadius: "4px",
                                     fontSize: "14px",
-                                    fontWeight: "bold",
+                                    fontWeight: "light",
                                     display: "inline-flex",
                                     alignItems: "center",
                                 }}
@@ -108,7 +109,7 @@ export default function Card({
                             padding: "4px 8px",
                             borderRadius: "4px",
                             fontSize: "14px",
-                            fontWeight: "bold",
+                            fontWeight: "light",
                             display: "inline-flex",
                             alignItems: "center",
                         }}
