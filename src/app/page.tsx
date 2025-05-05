@@ -10,9 +10,10 @@ import Typewriter from "./components/Typewriter";
 
 const tickets_mock = [
   {
+    comment: "l;asljef;laksje;lfkma;slekm;alskejfg;alksme;laskejf;laksmel;cviasejf;lkajse;olifj",
     ticket_id: "TCK001",
-    type: ["Garbage"],
-    organization: "Environment Dept.",
+    type: ["Garbage", "Streetlight"],
+    organization: ["Environment Dept."],
     timestamp: "2025-04-12T10:00:00Z",
     state: "Open",
     star: 2,
@@ -20,36 +21,40 @@ const tickets_mock = [
       "https://storage.googleapis.com/traffy_public_bucket/attachment/2025-04/eed82b385f8a1b773414d066a0800ffe.jpg",
   },
   {
+    comment: "l;asljef;laksje;lfkma;slekm;alskejfg;alksme;laskejf;laksmel;cviasejf;lkajse;olifj",
     ticket_id: "TCK002",
     type: ["Streetlight"],
-    organization: "City Electric",
+    organization: ["City Electric"],
     timestamp: "2025-04-10T16:45:00Z",
     state: "Resolved",
     star: 5,
     photo: "https://via.placeholder.com/300x200?text=Streetlight",
   },
   {
+    comment: "l;asljef;laksje;lfkma;slekm;alskejfg;alksme;laskejf;laksmel;cviasejf;lkajse;olifj",
     ticket_id: "TCK003",
     type: ["Streetlight"],
-    organization: "City Electric",
+    organization: ["City Electric"],
     timestamp: "2025-04-10T16:45:00Z",
     state: "Resolved",
     star: 5,
     photo: "https://via.placeholder.com/300x200?text=Streetlight",
   },
   {
+    comment: "l;asljef;laksje;lfkma;slekm;alskejfg;alksme;laskejf;laksmel;cviasejf;lkajse;olifj",
     ticket_id: "TCK004",
     type: ["Flooding"],
-    organization: "Disaster Response",
+    organization: ["Disaster Response"],
     timestamp: "2025-04-11T08:15:00Z",
     state: "In Progress",
     star: 3,
     photo: "idk,man",
   },
   {
+    comment: "l;asljef;laksje;lfkma;slekm;alskejfg;alksme;laskejf;laksmel;cviasejf;lkajse;olifj",
     ticket_id: "TCK005",
     type: ["Flooding"],
-    organization: "Disaster Response",
+    organization: ["Disaster Response"],
     timestamp: "2025-04-11T08:15:00Z",
     state: "In Progress",
     star: 3,
@@ -58,7 +63,7 @@ const tickets_mock = [
 ];
 
 const summarize_mock =
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis dignissim lectus. Proin placerat nisi mauris, non faucibus orci euismod eget. In pulvinar ante sed lacinia molestie. Vestibulum risus magna, tempor eu ultrices vel, cursus at magna. Nullam sed purus ac lacus malesuada congue nec ut lectus. Maecenas eleifend convallis velit sed maximus. Curabitur aliquet sem ac erat volutpat iaculis. Pellentesque semper diam quis gravida consequat. Nullam nec sem at nisl sagittis pretium. Nam aliquet cursus blandit. Nam viverra odio mi, eget faucibus leo lobortis vitae. Aenean ac sem risus. Aenean elit mi, maximus et ante eget, sagittis consequat quam.";
+  "Lorem ipsum dolor sit amet"
 export default function Home() {
   const [textInput, setTextInput] = useState("");
   const [summarize, setSummarize] = useState("");
@@ -102,7 +107,7 @@ export default function Home() {
         <form onSubmit={onSubmit} className="w-full">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6">
             <h1 className="text-2xl font-bold text-green-1000">
-              Traffy Summary
+              Optum Fondue
             </h1>
             <input
               name="text"
@@ -131,7 +136,7 @@ export default function Home() {
               {/* <ReactMarkdown>
                 {summarize}
               </ReactMarkdown> */}
-              <Typewriter text={summarize} onDone={() => setDone(true)}/>
+              <Typewriter text={summarize} onDone={() => setDone(true)} />
             </h1>
           )}
         </div>
