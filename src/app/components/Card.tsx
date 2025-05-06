@@ -83,6 +83,7 @@ export default function Card({
                     {
                         type.map(t => (
                             <div
+                                key={`${ticket_id}-${t}`}
                                 style={{
                                     backgroundColor: "lightgray",
                                     color: "black",

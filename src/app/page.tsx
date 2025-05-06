@@ -151,8 +151,8 @@ export default function Home() {
           id="result-grid"
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-6 animate-fade-in"
         >
-          {tickets.map((ticket) => (
-            <Card key={ticket.ticket_id} {...ticket} />
+          {tickets.map((ticket, index) => (
+            <Card key={`${index}-${ticket.ticket_id}`} {...ticket} />
           ))}
         </div>}
       </div>
